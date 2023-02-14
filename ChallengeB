@@ -1,0 +1,77 @@
+#Challege B
+live_loop :band do
+  12.times do #this is called grovy, and used to not be repetative
+    sample :drum_snare_soft
+    sleep 2
+  end
+  stop
+end
+
+#kick four times
+live_loop :bandd do
+  16.times do
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+  end
+  stop
+end
+
+live_loop :banddd do
+  8.times do
+    sample :drum_cymbal_closed
+    sleep 0.5
+    sample :drum_cymbal_closed
+    sleep 0.5
+  end
+  stop
+end
+
+
+live_loop :rando do
+  sleep 24
+  4.times do
+    sample :drum_splash_hard
+    sleep 1
+  end
+  stop
+end
+
+live_loop :randoo do
+  sleep 24
+  8.times do
+    sample :drum_cymbal_hard
+    sleep 0.5
+    sample :drum_cymbal_hard
+  end
+  stop
+end
+
+live_loop :bandddd do
+  sleep 28
+  4.times do #this is called grovy, and used to not be repetative
+    sample :drum_snare_soft
+    sleep 2
+  end
+  stop
+end
+
+#kick four times
+live_loop :banddddd do
+  sleep 28
+  8.times do
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+  end
+  stop
+end
+
+live_loop :bandddddd do
+  sleep 28
+  8.times do
+    sample :drum_cymbal_closed
+    sleep 0.5
+    sample :drum_cymbal_closed
+    sleep 0.5
+  end
+  stop
+end
