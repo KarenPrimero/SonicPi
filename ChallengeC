@@ -1,0 +1,45 @@
+use_bpm 160
+
+#change the sound of your notes by using a synthesizer
+use_synth :saw
+
+# DEFINE your function!
+define :strange_notes do
+  play :c2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  
+  play :c3
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+end
+strange_notes
+# use fx to modify the sound produced by your synth
+with_fx :whammy do
+  #call your function
+  strange_notes
+end
+with_fx :panslicer do
+  strange_notes
+end
+with_fx :compressor do
+  strange_notes
+end
+with_fx :vowel do
+  strange_notes
+end
+# sustain just means hold the note longer!
+play :c2, sustain: 3
+play :e2, sustain: 4
+play :g2, sustain: 2
+play :b2, sustain: 2
