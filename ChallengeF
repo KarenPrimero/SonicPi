@@ -1,0 +1,20 @@
+# Welcome to Sonic Pi
+use_bpm 500
+use_synth :piano
+
+num =21 #start t 1!
+
+88.times do
+  play (num)
+  sleep 0.5
+  num= num+1
+end
+
+down =108 #start t 1!
+
+88.times do
+  play (down)
+  sleep 0.25
+  down= down-1
+end
+stop
