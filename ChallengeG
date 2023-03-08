@@ -1,0 +1,36 @@
+# Stranger Things Main Theme
+use_bpm 160
+use_synth :saw
+notes = [:c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2]
+x = 0
+live_loop :main_theme do
+  with_fx :distortion do
+    8.times do
+      play notes[x]
+      sleep 0.5
+      x= x + 1
+    end
+    x=0
+  end
+end
+
+# Seven Nation Army by The White Stripes
+use_bpm 160
+use_synth :fm
+notes = [:e3, :e3, :g3, :e3, :r, :d3, :c3, :b2 ]
+sleep= [1.5, 0.5, 0.75, 0.25, 0.5, 0.5, 2, 2]
+x = 0
+s = 0
+r= sleep 1
+live_loop :white_stripes do
+  use_synth_defaults sustain: 0.25
+  8.times do
+    play notes[x]
+    sleep sleep[s]
+    x = x + 1
+    s = s + 1
+  end
+  x=0
+  s=0
+end
+
