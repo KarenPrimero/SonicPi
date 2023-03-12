@@ -1,0 +1,584 @@
+use_bpm 124
+r= 1
+rr= 0.5
+rrr= 0.25
+rrrr= 2
+SWM ="/Users/karenprimero/Documents/SWM.wav"
+live_loop :vocals do
+  sample SWM
+  stop
+end
+rest= [0.5,0.25,0.75,0.5,0.25,0.25,0.25,0.25,0.5]
+o=0
+rest2= [0.5,0.5,0.5,0.5,1,0.5,0.5,0.5,1,0.5,1,1,0.5,1,0.5,1,1,0.5,1,0.5,1,1]
+playy= [:Fs2,:A2,:A2,:A2,:b2,:A2,:Gs2,:Gs2,:Cs3,:Gs2,:Cs3,:B2,:Fs2,:A2,:Gs2,:A2,:Gs2,:Gs2,:Cs3,:Gs2,:Cs3,:E3]
+y=0
+r2=0
+rest3= [0.5,1,0.5,1,0.5,0.5,0.5,1,0.5,1,1,0.5,1,0.5,1,1,0.5,1,0.5,1,1]
+play3= [:Fs2,:A2,:A2,:B2,:A2,:Gs2,:Gs2,:Cs3,:G2,:C3,:B2,:Fs2,:A2,:Fs2,:A2,:Gs2,:Gs2,:Cs3,:G2,:C3,:E3]
+y3=0
+r3=0
+rest4= [0.25,0.25,0.5,0.5,4]
+play4= [:Cs5,:E5,:Fs5,:E5,:Cs5]
+y4=0
+r4=0
+rest5= [1.5,1.5,1,4,1.5,1.5,1,4]
+play5= [:Eb4,:Cs4,:Gs3,:G3,:Eb4,:Cs4,:A4,:A4]
+y5=0
+r5=0
+define :organ4real do
+  with_fx :flanger do
+    play :Gs4
+    sleep rrr
+    play :A4
+    sleep rrr
+    play :Gs4
+    sleep rrr
+    play :Cs4
+    sleep rrr
+  end
+end
+define :drumsBeat1 do
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+end
+define :drumsBeat2 do
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 0.5
+  sample :drum_bass_hard
+  sleep 0.5
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+end
+define :drumsIIBeat1 do
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1.5
+end
+define :drumsIIBeat2 do
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+end
+define :eBassBeat1 do
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :G2
+  sleep 0.5
+  play :C3
+  sleep 1
+  play :B2
+  sleep 0.5
+  play :A2
+  sleep 0.5
+end
+define :eBassBeat2 do
+  play :Fs2
+  sleep 0.5
+  play :A2
+  sleep 1
+  play :Gs2
+  sleep 0.5
+  play :B2
+  sleep 1
+  play :A2
+  sleep 0.5
+  play :G2
+  sleep 0.5
+end
+define :organBeat1 do
+  with_fx :flanger do
+    play :Gs4
+    sleep 0.5
+    play :Cs4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :A4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :Cs4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :A4
+    sleep 0.5
+  end
+end
+
+#Snare Drum Into measure 1
+3.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+sleep 1.5
+sample :drum_snare_hard
+sleep 1.5
+2.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+sleep rr
+2.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+sleep rrr
+sample :drum_snare_hard
+sleep rrr
+live_loop :topp do
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  stop
+end
+live_loop :toppp do
+  sleep r
+  sample :drum_tom_hi_soft
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep r
+  sample :drum_tom_hi_soft
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep rr
+  stop
+end
+live_loop :EBass do
+  use_synth :fm
+  play :Cs3
+  sleep 4
+  stop
+end
+live_loop :Organ1 do
+  use_synth :blade
+  with_fx :flanger do
+    sleep rr
+    play :Cs4
+    sleep rr
+    play :Gs4
+    sleep rr
+    play :A4
+    sleep rr
+    play :G4
+    sleep rr
+    play :C4
+    sleep rr
+    play :G4
+    sleep rr
+    play :A4
+    sleep rr
+    stop
+  end
+end
+sleep 4
+live_loop :DrumsI do
+  4.times do
+    drumsBeat2
+  end
+  stop
+end
+live_loop :drumsII do
+  4.times do
+    drumsIIBeat2
+  end
+  stop
+end
+live_loop :organ2 do
+  4.times do
+    #measure 1 (repeats 4 times)
+    use_synth :blade
+    with_fx :flanger do
+      organBeat1
+    end
+  end
+  stop
+end
+live_loop :ElectricBass do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  sleep 2
+  play :B3
+  play :B2
+  sleep 1
+  play :A3
+  play :A2
+  sleep 0.5
+  play :Gs3
+  play :Gs2
+  sleep 4.5
+  sleep r
+  play :Gs3
+  play :Gs2
+  sleep 0.5
+  play :A3
+  play :A2
+  sleep 0.5
+  play :B3
+  play :B2
+  sleep 1
+  play :A3
+  play :A2
+  sleep 0.5
+  play :Gs3
+  play :Gs2
+  sleep 3
+  play :Cs4
+  play :Cs3
+  sleep 0.5
+  play :B3
+  play :B2
+  sleep 0.5
+  play :A3
+  play :A2
+  sleep 0.5
+  stop
+end
+sleep 12
+live_loop :Drums2I do
+  drumsBeat2
+  drumsBeat1
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.5
+  sample :drum_snare_hard
+  sleep rr
+  sample :drum_snare_hard
+  sleep rr
+  stop
+end
+live_loop :Drums2II do
+  drumsIIBeat2
+  #meaure 2
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.75
+  sample :drum_tom_hi_hard
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.75
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  9.times do
+    sleep rest[o]
+    sample :drum_tom_hi_hard
+    o=o+1
+  end
+  o=0
+  sleep 0.5
+  stop
+end
+live_loop :Drums2III do
+  sleep 10
+  sample :drum_cymbal_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sleep r
+  stop
+end
+live_loop :ElectricBass do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  play :A3
+  play :E3
+  sleep rr
+  play :A3
+  play :Eb3
+  sleep 4
+  play :Cs4
+  play :Cs3
+  sleep 1
+  play :Gs3
+  play :Gs2
+  sleep rr
+  play :C4
+  play :C3
+  sleep r
+  play :B3
+  play :B2
+  sleep 1.5
+  play :A3
+  play :A2
+  sleep rr
+  play :A3
+  play :A2
+  sleep rr
+  play :A3
+  play :A2
+  sleep rr
+  play :B3
+  play :B2
+  sleep rr
+  play :Fs3
+  play :Fs2
+  sleep rr
+  play :Gs3
+  play :Gs2
+  sleep rr
+  play :B3
+  play :B2
+  stop
+end
+live_loop :organ3 do
+  use_synth :blade
+  with_fx :flanger do
+    organBeat1
+    organ4real
+    organ4real
+    organ4real
+    organ4real
+    organ4real
+    organ4real
+    organ4real
+    organ4real
+    stop
+  end
+end
+sleep 12
+live_loop :Piano4 do
+  use_synth :piano
+  8.times do
+    play play5[y5]
+    sleep rest5[r5]
+    y5 = y5 + 1
+    r5 = r5 + 1
+  end
+  y5= 0
+  r5= 0
+  stop
+end
+live_loop :Drums5I do
+  drumsBeat1
+  drumsBeat2
+  drumsBeat1
+  drumsBeat2
+  stop
+end
+live_loop :Drums5I do
+  4.times do
+    drumsIIBeat1
+  end
+  stop
+end
+live_loop :ElectricBass5 do
+  use_synth :fm #try synth :fm
+  eBassBeat1
+  eBassBeat2
+  eBassBeat1
+  eBassBeat2
+  stop
+end
+live_loop :organ5 do
+  use_synth :blade
+  with_fx :flanger do
+    sleep 1.5
+    play :Gs3
+    sleep 2
+    play :Fs3
+    sleep 0.5
+    play :Fs3
+    sleep 5.5
+    play :Gs3
+    sleep 2
+    play :A3
+    sleep 0.5
+    play :A3
+    sleep 4
+    stop
+  end
+end
+sleep 16
+live_loop :Piano6 do
+  use_synth :piano
+  pianoBeat1
+  play :G3
+  sleep 4
+  play :Fs5
+  sleep 1.5
+  play :E5
+  sleep 1.5
+  play :A5
+  sleep 1
+  stop
+end
+live_loop :Drums6I do
+  drumsBeat1
+  drumsBeat2
+  drumsBeat1
+  stop
+end
+live_loop :Drums6II do
+  3.times do
+    drumsIIBeat1
+  end
+  stop
+end
+live_loop :ElectricBass6 do
+  use_synth :fm #try synth :fm
+  eBassBeat1
+  eBassBeat2
+  eBassBeat1
+  stop
+end
+live_loop :organ5 do
+  use_synth :blade
+  with_fx :flanger do
+    sleep 1.5
+    play :Gs3
+    sleep 2
+    play :Fs3
+    sleep 0.5
+    play :Fs3
+    sleep 2.5
+    play :Cs5
+    sleep 0.25
+    play :E5
+    sleep 0.25
+    play :Fs5
+    sleep 0.5
+    play :E5
+    sleep 0.5
+    play :Cs5
+    sleep 1.5
+    play :Gs3
+    sleep 2
+    play :A3
+    sleep 0.5
+    stop
+  end
+end
+live_loop :Piano7 do
+  use_synth :piano
+  play :A5
+  sleep 4
+  stop
+end
+live_loop :Drums7I do
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.5
+  sample :drum_snare_hard
+  sleep 1
+  drumsBeat1
+  drumsBeat2
+  drumsBeat1
+  stop
+end
+live_loop :Drums7II do
+  drumsIIBeat1
+  stop
+end
+live_loop :ElectricBass7 do
+  use_synth :fm #try synth :fm
+  22.times do
+    play playy[y]
+    sleep rest2[r2]
+    y = y + 1
+    r2 = r2 + 1
+  end
+  y=0
+  r2=0
+  stop
+end
+live_loop :organ7 do
+  use_synth :blade
+  with_fx :flanger do
+    play :A3
+    sleep 4
+    stop
+  end
+end
+sleep 16
+live_loop :Drums8I do
+  drumsBeat2
+  drumsBeat1
+  drumsBeat2
+  drumsBeat1
+  stop
+end
+live_loop :ElectricBass8 do
+  use_synth :fm #try synth :fm
+  21.times do
+    play play3[y3]
+    sleep rest3[r3]
+    y3 = y3 + 1
+    r3 = r3 + 1
+    stop
+  end
+  y3= 0
+  r3= 0
+end
+live_loop :organ8 do
+  use_synth :blade
+  with_fx :flanger do
+    sleep 10.5
+    5.times do
+      play play4[y4]
+      sleep rest4[r4]
+      y4 = y4 + 1
+      r3 = r4 + 1
+    end
+    y4= 0
+    r4= 0
+    stop
+  end
+end
