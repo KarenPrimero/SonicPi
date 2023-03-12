@@ -1,0 +1,91 @@
+use_bpm 124
+
+live_loop :bandd do
+  3.times do
+    sample :drum_snare_hard
+    sleep 0.25
+  end
+  #play :r
+  sleep 0.25
+  sleep 1
+  sleep 0.5
+  sample :drum_snare_hard
+  sleep 0.5
+  sleep 1
+  2.times do
+    sample :drum_snare_hard
+    sleep 0.25
+  end
+  sleep 0.5
+  2.times do
+    sample :drum_snare_hard
+    sleep 0.25
+  end
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  stop
+end
+
+live_loop :topp do
+  sleep 6
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  stop
+end
+
+live_loop :toppp do
+  sleep 6
+  sleep 0.5
+  sleep 0.5
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  sleep 0.5
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  sample :drum_tom_hi_soft
+  sleep 0.5
+  stop
+end
+
+live_loop :toppp do
+  use_synth :fm
+  sleep 6
+  play :Cs3
+  sleep 0.25
+  sleep 0.5
+  sleep 1
+  sleep 2
+  stop
+end
+
+live_loop :top do
+  sleep 6
+  use_synth :blade
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  play :Gs4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  play :G4
+  sleep 0.5
+  play :C4
+  sleep 0.5
+  play :G4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  stop
+end
