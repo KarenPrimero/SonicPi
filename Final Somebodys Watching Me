@@ -26,6 +26,26 @@ rest5= [1.5,1.5,1,4,1.5,1.5,1,4]
 play5= [:Eb4,:Cs4,:Gs3,:G3,:Eb4,:Cs4,:A4,:A4]
 y5=0
 r5=0
+rest6= [ 0.5,0.5,0.5,0.5,1,1.5,0.5,0.5,0.5,1,0.5,0.5,2.5,0.25,0.25,0.5]
+play6= [:Cs5,:E5,:C5,:Fs5,:C5,:Cs5,:E5,:C5,:B5,:A5,:A5,:Gs5,:Fs5,:Fs5,:Fs5,:Fs5]
+y6=0
+r6=0
+define :repeatending1 do
+  16.times do
+    sleep rest6[r6]
+    play play6[y6]
+    r6 = r6 + 1
+    y6 = y6 + 1
+  end
+  y6= 0
+  r6= 0
+  sleep 0.5
+  stop
+end
+define :repeatending3 do
+  sample :drum_cymbal_hard
+  sleep 12
+end
 define :organ4real do
   with_fx :flanger do
     play :Gs4
@@ -137,8 +157,6 @@ define :organBeat1 do
     sleep 0.5
   end
 end
-
-#Snare Drum Into measure 1
 3.times do
   sample :drum_snare_hard
   sleep rrr
@@ -235,7 +253,6 @@ live_loop :organ2 do
 end
 live_loop :ElectricBass do
   use_synth :fm #try synth :fm
-  #meaure 1
   sleep 2
   play :B3
   play :B2
@@ -370,7 +387,7 @@ live_loop :ElectricBass do
   play :B2
   stop
 end
-live_loop :organ3 do
+live_loop :organ20 do
   use_synth :blade
   with_fx :flanger do
     organBeat1
@@ -582,3 +599,4 @@ live_loop :organ8 do
     stop
   end
 end
+sleep 16
