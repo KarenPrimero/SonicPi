@@ -1,0 +1,436 @@
+use_bpm 124
+
+r= 1
+rr= 0.5
+rrr= 0.25
+rrrr= 2
+
+
+define :organ4real do
+  play :Gs4
+  sleep rrr
+  play :A4
+  sleep rrr
+  play :Gs4
+  sleep rrr
+  play :Cs4
+  sleep rrr
+end
+
+#Snare Drum Into measure 1
+3.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+
+sleep rrr
+sleep r
+sleep rr
+sample :drum_snare_hard
+sleep rr
+sleep r
+
+2.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+
+sleep rr
+
+2.times do
+  sample :drum_snare_hard
+  sleep rrr
+end
+
+sleep rrr
+sample :drum_snare_hard
+sleep rrr
+
+live_loop :topp do
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  stop
+end
+
+live_loop :toppp do
+  sleep rr
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep rr
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep rr
+  sample :drum_tom_hi_soft
+  sleep rr
+  stop
+end
+
+live_loop :EBass do
+  use_synth :fm
+  play :Cs3
+  sleep 0.25
+  sleep rr
+  sleep r
+  sleep 2
+  stop
+end
+
+live_loop :Organ1 do
+  use_synth :blade
+  sleep rr
+  play :Cs4
+  sleep rr
+  play :Gs4
+  sleep rr
+  play :A4
+  sleep rr
+  play :G4
+  sleep rr
+  play :C4
+  sleep rr
+  play :G4
+  sleep rr
+  play :A4
+  sleep rr
+  stop
+end
+
+sleep 4
+
+live_loop :DrumsI do
+  4.times do
+    sample :drum_bass_hard
+    sleep 1
+    sample :drum_cymbal_hard
+    sample :drum_snare_hard
+    sleep 1
+    sample :drum_bass_hard
+    sleep 0.5
+    sample :drum_bass_hard
+    sleep 0.5
+    sample :drum_cymbal_hard
+    sample :drum_snare_hard
+    sleep 1
+  end
+  stop
+end
+
+live_loop :drumsII do
+  4.times do
+    sleep 0.5
+    sleep 0.5
+    sample :drum_tom_hi_hard
+    sleep 0.5
+    sample :drum_tom_hi_hard
+    sleep 0.5
+    sleep 0.5
+    sample :drum_tom_hi_hard
+    sleep 0.5
+    sample :drum_tom_hi_hard
+    sleep 0.5
+    sample :drum_tom_hi_hard
+    sleep 0.5
+  end
+  stop
+end
+
+live_loop :organ2 do
+  4.times do
+    #measure 1 (repeats 4 times)
+    use_synth :blade
+    play :Gs4
+    sleep 0.5
+    play :Cs4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :A4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :Cs4
+    sleep 0.5
+    play :Gs4
+    sleep 0.5
+    play :A4
+    sleep 0.5
+  end
+  stop
+end
+
+live_loop :ElectricBass do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  sleep 2
+  play :B3
+  play :B2
+  sleep 1
+  play :A3
+  play :A2
+  sleep 0.5
+  play :Gs3
+  play :Gs2
+  sleep 0.5
+  
+  #measure 2
+  sleep 4
+  
+  #measure 3
+  sleep r
+  play :Gs3
+  play :Gs2
+  sleep 0.5
+  play :A3
+  play :A2
+  sleep 0.5
+  play :B3
+  play :B2
+  sleep 1
+  play :A3
+  play :A2
+  sleep 0.5
+  play :Gs3
+  play :Gs2
+  sleep 0.5
+  
+  #measure 4
+  sleep r
+  sleep r
+  sleep 0.5
+  play :Cs4
+  play :Cs3
+  sleep 0.5
+  play :B3
+  play :B2
+  sleep 0.5
+  play :A3
+  play :A2
+  sleep 0.5
+  stop
+end
+
+sleep 12
+
+live_loop :Drums2I do
+  
+  #meausre 1
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_bass_hard
+  sleep rr
+  sample :drum_bass_hard
+  sleep rr
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  
+  #measure 2
+  
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  
+  
+  #measure 3
+  sample :drum_bass_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep r
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep rr
+  sample :drum_snare_hard
+  sleep rr
+  stop
+end
+
+live_loop :Drums2II do
+  
+  #meaure 1
+  sleep rr
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  
+  #meaure 2
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  
+  #Measure 3
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep rr
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep 0.25
+  sleep 0.25
+  sample :drum_tom_hi_hard
+  sleep rr
+  
+  stop
+end
+
+live_loop :Drums2III do
+  #Measure 1
+  sleep 4
+  #Measure 2
+  sleep 4
+  
+  #Measure 3
+  sleep r
+  sleep r
+  sample :drum_cymbal_hard
+  sleep r
+  sample :drum_cymbal_hard
+  sleep r
+  stop
+end
+
+live_loop :ElectricBass do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  play :A3
+  play :E3
+  sleep rr
+  play :A3
+  play :Ee3
+  sleep rr
+  sleep r
+  sleep rrrr
+  
+  #Measure 2
+  sleep rr
+  play :Cs4
+  play :Cs3
+  sleep rr
+  sleep rr
+  play :Gs3
+  play :Gs2
+  sleep rr
+  play :C4
+  play :C3
+  sleep r
+  play :B3
+  play :B2
+  sleep r
+  
+  #Measure 3
+  sleep rr
+  play :A3
+  play :A2
+  sleep rr
+  play :A3
+  play :A2
+  sleep rr
+  play :A3
+  play :A2
+  sleep rr
+  play :B3
+  play :B2
+  sleep rr
+  play :Fs3
+  play :Fs2
+  sleep rr
+  play :Gs3
+  play :Gs2
+  sleep rr
+  play :B3
+  play :B2
+  stop
+end
+
+live_loop :organ3 do
+  #measure 1
+  use_synth :blade
+  play :Gs4
+  sleep rr
+  play :Cs4
+  sleep rr
+  play :Gs4
+  sleep rr
+  play :A2
+  sleep rr
+  play :Gs4
+  sleep rr
+  play :Cs4
+  sleep rr
+  play :Gs4
+  sleep rr
+  play :A4
+  sleep rr
+  
+  #Measure 2
+  organ4real
+  organ4real
+  organ4real
+  organ4real
+  
+  #Measure 3
+  organ4real
+  organ4real
+  organ4real
+  organ4real
+  stop
+end
