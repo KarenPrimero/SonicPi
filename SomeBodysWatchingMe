@@ -1,11 +1,13 @@
 use_bpm 124
-
 r= 1
 rr= 0.5
 rrr= 0.25
 rrrr= 2
-
-
+SWM ="/Users/karenprimero/Documents/SWM.wav"
+live_loop :vocals do
+  sample SWM
+  stop
+end
 define :organ4real do
   play :Gs4
   sleep rrr
@@ -16,36 +18,127 @@ define :organ4real do
   play :Cs4
   sleep rrr
 end
+define :drumsBeat1 do
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+end
+define :drumsBeat2 do
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 0.5
+  sample :drum_bass_hard
+  sleep 0.5
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+end
+define :drumsIIBeat1 do
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1.5
+end
+define :drumsIIBeat2 do
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 1
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+  sample :drum_tom_hi_hard
+  sleep 0.5
+end
+define :eBassBeat1 do
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :G2
+  sleep 0.5
+  play :C3
+  sleep 1
+  play :B2
+  sleep 0.5
+  play :A2
+  sleep 0.5
+end
+define :eBassBeat2 do
+  play :Fs2
+  sleep 0.5
+  play :A2
+  sleep 1
+  play :Gs2
+  sleep 0.5
+  play :B2
+  sleep 1
+  play :A2
+  sleep 0.5
+  play :G2
+  sleep 0.5
+end
+define :organBeat1 do
+  play :Gs4
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  play :Gs4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  play :Gs4
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  play :Gs4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+end
 
 #Snare Drum Into measure 1
 3.times do
   sample :drum_snare_hard
   sleep rrr
 end
-
 sleep rrr
 sleep r
 sleep rr
 sample :drum_snare_hard
 sleep rr
 sleep r
-
 2.times do
   sample :drum_snare_hard
   sleep rrr
 end
-
 sleep rr
-
 2.times do
   sample :drum_snare_hard
   sleep rrr
 end
-
 sleep rrr
 sample :drum_snare_hard
 sleep rrr
-
 live_loop :topp do
   sample :drum_bass_hard
   sleep r
@@ -59,22 +152,18 @@ live_loop :topp do
   sleep r
   stop
 end
-
 live_loop :toppp do
-  sleep rr
-  sleep rr
+  sleep r
   sample :drum_tom_hi_soft
   sleep rr
   sample :drum_tom_hi_soft
-  sleep rr
-  sleep rr
+  sleep r
   sample :drum_tom_hi_soft
   sleep rr
   sample :drum_tom_hi_soft
   sleep rr
   stop
 end
-
 live_loop :EBass do
   use_synth :fm
   play :Cs3
@@ -84,7 +173,6 @@ live_loop :EBass do
   sleep 2
   stop
 end
-
 live_loop :Organ1 do
   use_synth :blade
   sleep rr
@@ -104,70 +192,27 @@ live_loop :Organ1 do
   sleep rr
   stop
 end
-
 sleep 4
-
 live_loop :DrumsI do
   4.times do
-    sample :drum_bass_hard
-    sleep 1
-    sample :drum_cymbal_hard
-    sample :drum_snare_hard
-    sleep 1
-    sample :drum_bass_hard
-    sleep 0.5
-    sample :drum_bass_hard
-    sleep 0.5
-    sample :drum_cymbal_hard
-    sample :drum_snare_hard
-    sleep 1
+    drumsBeat2
   end
   stop
 end
-
 live_loop :drumsII do
   4.times do
-    sleep 0.5
-    sleep 0.5
-    sample :drum_tom_hi_hard
-    sleep 0.5
-    sample :drum_tom_hi_hard
-    sleep 0.5
-    sleep 0.5
-    sample :drum_tom_hi_hard
-    sleep 0.5
-    sample :drum_tom_hi_hard
-    sleep 0.5
-    sample :drum_tom_hi_hard
-    sleep 0.5
+    drumsIIBeat2
   end
   stop
 end
-
 live_loop :organ2 do
   4.times do
     #measure 1 (repeats 4 times)
     use_synth :blade
-    play :Gs4
-    sleep 0.5
-    play :Cs4
-    sleep 0.5
-    play :Gs4
-    sleep 0.5
-    play :A4
-    sleep 0.5
-    play :Gs4
-    sleep 0.5
-    play :Cs4
-    sleep 0.5
-    play :Gs4
-    sleep 0.5
-    play :A4
-    sleep 0.5
+    organBeat1
   end
   stop
 end
-
 live_loop :ElectricBass do
   use_synth :fm #try synth :fm
   #meaure 1
@@ -181,10 +226,8 @@ live_loop :ElectricBass do
   play :Gs3
   play :Gs2
   sleep 0.5
-  
   #measure 2
   sleep 4
-  
   #measure 3
   sleep r
   play :Gs3
@@ -202,7 +245,6 @@ live_loop :ElectricBass do
   play :Gs3
   play :Gs2
   sleep 0.5
-  
   #measure 4
   sleep r
   sleep r
@@ -218,39 +260,12 @@ live_loop :ElectricBass do
   sleep 0.5
   stop
 end
-
 sleep 12
-
 live_loop :Drums2I do
-  
   #meausre 1
-  sample :drum_bass_hard
-  sleep r
-  sample :drum_cymbal_hard
-  sample :drum_snare_hard
-  sleep r
-  sample :drum_bass_hard
-  sleep rr
-  sample :drum_bass_hard
-  sleep rr
-  sample :drum_cymbal_hard
-  sample :drum_snare_hard
-  sleep r
-  
+  drumsBeat2
   #measure 2
-  
-  sample :drum_bass_hard
-  sleep r
-  sample :drum_cymbal_hard
-  sample :drum_snare_hard
-  sleep r
-  sample :drum_bass_hard
-  sleep r
-  sample :drum_cymbal_hard
-  sample :drum_snare_hard
-  sleep r
-  
-  
+  drumsBeat1
   #measure 3
   sample :drum_bass_hard
   sleep r
@@ -270,24 +285,9 @@ live_loop :Drums2I do
   sleep rr
   stop
 end
-
 live_loop :Drums2II do
-  
   #meaure 1
-  sleep rr
-  sleep rr
-  sample :drum_tom_hi_hard
-  sleep rr
-  sample :drum_tom_hi_hard
-  sleep rr
-  sleep rr
-  sample :drum_tom_hi_hard
-  sleep rr
-  sample :drum_tom_hi_hard
-  sleep rr
-  sample :drum_tom_hi_hard
-  sleep rr
-  
+  drumsIIBeat2
   #meaure 2
   sleep rr
   sample :drum_tom_hi_hard
@@ -305,7 +305,6 @@ live_loop :Drums2II do
   sleep rr
   sample :drum_tom_hi_hard
   sleep rr
-  
   #Measure 3
   sleep rr
   sample :drum_tom_hi_hard
@@ -324,30 +323,24 @@ live_loop :Drums2II do
   sample :drum_tom_hi_hard
   sleep 0.25
   sample :drum_tom_hi_hard
-  sleep 0.25
-  sleep 0.25
+  sleep rr
   sample :drum_tom_hi_hard
   sleep rr
-  
   stop
 end
-
 live_loop :Drums2III do
   #Measure 1
   sleep 4
   #Measure 2
   sleep 4
-  
   #Measure 3
-  sleep r
-  sleep r
+  sleep 2
   sample :drum_cymbal_hard
   sleep r
   sample :drum_cymbal_hard
   sleep r
   stop
 end
-
 live_loop :ElectricBass do
   use_synth :fm #try synth :fm
   #meaure 1
@@ -355,17 +348,15 @@ live_loop :ElectricBass do
   play :E3
   sleep rr
   play :A3
-  play :Ee3
+  play :Eb3
   sleep rr
   sleep r
   sleep rrrr
-  
   #Measure 2
   sleep rr
   play :Cs4
   play :Cs3
-  sleep rr
-  sleep rr
+  sleep 1
   play :Gs3
   play :Gs2
   sleep rr
@@ -375,7 +366,6 @@ live_loop :ElectricBass do
   play :B3
   play :B2
   sleep r
-  
   #Measure 3
   sleep rr
   play :A3
@@ -400,37 +390,261 @@ live_loop :ElectricBass do
   play :B2
   stop
 end
-
 live_loop :organ3 do
   #measure 1
   use_synth :blade
-  play :Gs4
-  sleep rr
-  play :Cs4
-  sleep rr
-  play :Gs4
-  sleep rr
-  play :A2
-  sleep rr
-  play :Gs4
-  sleep rr
-  play :Cs4
-  sleep rr
-  play :Gs4
-  sleep rr
-  play :A4
-  sleep rr
-  
+  organBeat1
   #Measure 2
   organ4real
   organ4real
   organ4real
   organ4real
-  
   #Measure 3
   organ4real
   organ4real
   organ4real
   organ4real
+  stop
+end
+sleep 12
+live_loop :Piano4 do
+  use_synth :piano
+  #Measure 1
+  play :Eb4
+  sleep 1.5
+  play :Cs4
+  sleep 1.5
+  play :Gs3
+  sleep 1
+  #Measure 2
+  play :G3
+  sleep 4
+  #Measure 3
+  play :Eb4
+  sleep 1.5
+  play :Cs4
+  sleep 1.5
+  play :A4
+  sleep 1
+  #Measure 3
+  play :A4
+  sleep 4
+  stop
+end
+live_loop :Drums5I do
+  #Measure #1
+  drumsBeat1
+  #Measure #2
+  drumsBeat2
+  #Measure #3
+  drumsBeat1
+  #Measure #4
+  drumsBeat2
+  stop
+end
+live_loop :Drums5I do
+  #Measure 1-4
+  4.times do
+    drumsIIBeat1
+  end
+  stop
+end
+live_loop :ElectricBass5 do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  eBassBeat1
+  #Measure 2
+  eBassBeat2
+  #meaure 1
+  eBassBeat1
+  #Measure 2
+  eBassBeat2
+  stop
+end
+live_loop :organ5 do
+  use_synth :blade
+  #measure 1
+  sleep 1.5
+  play :Gs3
+  sleep 2
+  play :Fs3
+  sleep 0.5
+  #Measure 2
+  play :Fs3
+  sleep 4
+  #Measure 3
+  sleep 1.5
+  play :Gs3
+  sleep 2
+  play :A3
+  sleep 0.5
+  #Measure 4
+  play :A3
+  sleep 4
+  stop
+end
+sleep 16
+live_loop :Piano6 do
+  use_synth :piano
+  #Measure 1
+  pianoBeat1
+  #Measure 2
+  play :G3
+  sleep 4
+  #Meausure 3
+  play :Fs5
+  sleep 1.5
+  play :E5
+  sleep 1.5
+  play :A5
+  sleep 1
+  stop
+end
+live_loop :Drums6I do
+  #Measure #1
+  drumsBeat1
+  #Measure #2
+  drumsBeat2
+  #Measure #3
+  drumsBeat1
+  stop
+end
+live_loop :Drums6II do
+  #Measure 1-4
+  3.times do
+    drumsIIBeat1
+  end
+  stop
+end
+live_loop :ElectricBass6 do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  eBassBeat1
+  #Measure 2
+  eBassBeat2
+  #meaure 3
+  eBassBeat1
+  stop
+end
+live_loop :organ5 do
+  use_synth :blade
+  #measure 1
+  sleep 1.5
+  play :Gs3
+  sleep 2
+  play :Fs3
+  sleep 0.5
+  #measure 2
+  play :Fs3
+  sleep 2.5
+  play :Cs5
+  sleep 0.25
+  play :E5
+  sleep 0.25
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  #Measure 3
+  play :Cs5
+  sleep 1.5
+  play :Gs3
+  sleep 2
+  play :A3
+  sleep 0.5
+  stop
+end
+live_loop :Piano7 do
+  use_synth :piano
+  #Measure 1
+  play :A5
+  sleep 4
+  stop
+end
+live_loop :Drums7I do
+  #Measure #1
+  sample :drum_bass_hard
+  sleep 1
+  sample :drum_cymbal_hard
+  sample :drum_snare_hard
+  sleep 1
+  sample :drum_bass_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.25
+  sample :drum_snare_hard
+  sleep 0.5
+  sample :drum_snare_hard
+  sleep 1
+  #Measure #2
+  drumsBeat1
+  #Measure #3
+  drumsBeat2
+  #Measure #4
+  drumsBeat1
+  stop
+end
+live_loop :Drums7II do
+  #Measure
+  drumsIIBeat1
+  stop
+end
+live_loop :ElectricBass7 do
+  use_synth :fm #try synth :fm
+  #meaure 1
+  play :Fs2
+  sleep 0.5
+  play :A2
+  sleep 0.5
+  play :A2
+  sleep 0.5
+  play :A2
+  sleep 0.5
+  play :b2
+  sleep 1
+  play :A2
+  sleep 0.5
+  play :Gs2
+  sleep 0.5
+  #Measure 2
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :B2
+  sleep 1
+  #Measure 3
+  play :Fs2
+  sleep 0.5
+  play :A2
+  sleep 1
+  play :Gs2
+  sleep 0.5
+  play :A2
+  sleep 1
+  play :Gs2
+  sleep 1
+  #Measure 4
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :Gs2
+  sleep 0.5
+  play :Cs3
+  sleep 1
+  play :E3
+  sleep 1
+  stop
+end
+live_loop :organ7 do
+  use_synth :blade
+  #measure 1
+  play :A3
+  sleep 4
   stop
 end
