@@ -1,0 +1,60 @@
+use_synth :piano
+use_bpm 120
+
+
+#Parameterized Function Definition
+define :function1 do |n|
+  play :c5
+  sleep 0.5
+  play :d5
+  sleep 0.5
+  play :e5
+  sleep 0.5
+  play :d5
+  sleep 1
+  play :c5
+  sleep 1
+  play :d5
+  sleep 1
+  play n #This note is different in F1 and F2
+  sleep 1
+  play :c5
+  sleep 1.5
+  play :r
+  sleep 1
+end
+
+
+
+#-------------------------music starts here-------------------------#
+live_loop  :music do
+  #INTRO
+  play :e4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :g4, sustain: 3
+  sleep 2
+  play :c5, sustain: 3
+  sleep 2
+  play :a4, sustain: 3
+  sleep 2
+  play :r
+  sleep 1
+  #FUNCTION CALLS
+  function1 :d5
+  function1 :a4
+  #OUTRO
+  play :a4
+  sleep 1
+  play :g4
+  sleep 0.5
+  play :c5
+  sleep 1
+  play :c5
+  sleep 1
+  play :e4
+  sleep 1
+  play :d4, sustain: 2
+  sleep 1.5
+end
