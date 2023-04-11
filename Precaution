@@ -42,7 +42,7 @@ live_loop :measure1Trevl do
     sleep 0.08
     gliss= gliss + 1
   end
-  # S p a c e-4
+  # S p a c e-4 (Same as z)
   play :Fs5
   sleep 0.5
   play :Fs5
@@ -57,6 +57,210 @@ live_loop :measure1Trevl do
   sleep 0.5
   play :E5
   sleep 0.5
+  # S p a c e-5(can be parameterized with k)(Same as S)
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :B5
+  sleep 0.5
+  #Measure 2
+  # S p a c e-1 (Same as Q)
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  # S p a c e-2(can be parameterized with k) (Same as D)
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  # S p a c e-3 (Same as z)
+  play :Fs5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  # S p a c e-4  (same as S )
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :B5
+  sleep 0.5
+  #Measure 3
+  # S p a c e-1  (same as Q )
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  # S p a c e-2  (same as D )
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  # S p a c e-3 (Same as z)
+  play :Fs5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  # S p a c e-4  (same as S )
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :Gs5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :B5
+  sleep 0.5
+  #Measure 4
+  # S p a c e-1  (same as Q )
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :A5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  # S p a c e-2  (same as D )
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  # S p a c e-3
+  play :D4
+  sleep 1.5
+  play :D4
+  sleep 0.5
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  play :B3
+  sleep 1
+  # S p a c e-4
+  sleep 4
+  # S p a c e-5
+  play :Cs4
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  sleep 0.5
+  play :A3
+  sleep 0.5
+  sleep 1
+  #Measure 5
+  # S p a c e-1
+  sleep 0.5
+  play :Fs4
+  sleep 0.5
+  sleep 0.5
+  play :Fs4
+  sleep 0.5
+  play :Fs4
+  sleep 1
+  play :E4
+  sleep 1
   stop
 end
 
@@ -102,5 +306,157 @@ live_loop :measure1Base do
   sleep 0.5
   play :B2
   sleep 1
+  # S p a c e-5
+  play :E2
+  sleep 1
+  play :E3
+  sleep 1
+  sleep 0.5
+  play :E2
+  sleep 0.5
+  play :E3
+  sleep 1
+  #Measure 2
+  # S p a c e-1
+  play :A1
+  sleep 1
+  play :A2
+  sleep 1
+  sleep 0.5
+  play :A1
+  sleep 0.5
+  play :A2
+  sleep 1
+  # S p a c e-2
+  play :D2
+  sleep 1
+  play :D3
+  sleep 1
+  play :Cs2
+  sleep 1
+  play :Cs3
+  sleep 1
+  # S p a c e-3
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-4
+  play :E2
+  sleep 1
+  play :E3
+  sleep 1
+  sleep 0.5
+  play :E2
+  sleep 0.5
+  play :E3
+  sleep 1
+  #Measure 3
+  # S p a c e-1
+  play :A1
+  sleep 1
+  play :A2
+  sleep 1
+  sleep 0.5
+  play :A1
+  sleep 0.5
+  play :A2
+  sleep 1
+  # S p a c e-2
+  play :D2
+  sleep 1
+  play :D3
+  sleep 1
+  play :Cs2
+  sleep 1
+  play :Cs3
+  sleep 1
+  # S p a c e-3
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-4
+  play :E2
+  sleep 1
+  play :E3
+  sleep 1
+  sleep 0.5
+  play :E2
+  sleep 0.5
+  play :E3
+  sleep 1
+  #Measure 4
+  # S p a c e-1
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-2
+  play :E2
+  sleep 1
+  play :E3
+  sleep 1
+  sleep 0.5
+  play :E2
+  sleep 0.5
+  play :E3
+  sleep 1
+  # S p a c e-4
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-4
+  play :E2
+  sleep 1
+  play :E3
+  sleep 1
+  sleep 0.5
+  play :E2
+  sleep 0.5
+  play :E3
+  sleep 1
+  # S p a c e-5
+  play :A1
+  sleep 1
+  play :A2
+  sleep 1
+  sleep 0.5
+  play :A1
+  sleep 0.5
+  play :A2
+  sleep 1
+  #Measure 5
+  # S p a c e-1
+  play :D2
+  sleep 1
+  play :D3
+  sleep 1
+  play :Cs2
+  sleep 1
+  play :Cs3
+  sleep 1
   stop
 end
+
