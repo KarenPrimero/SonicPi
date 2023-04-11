@@ -1,0 +1,106 @@
+use_bpm 169
+
+#Arrays:
+glissory= [:Cs8,:B7,:A7,:Gs7,:Fs7,:E7,:D7,:Cs7,:B6,:A6,:Gs6,:Fs6,:E6,:D6,:Cs6,:B5,:A5,:Gs5,:Fs5,:E5,:D5,:Cs5,:B4,:A4,:Gs4]
+gliss=0
+
+
+#Measure 1
+
+live_loop :measure1Trevl do
+  use_synth :piano
+  # S p a c e-1
+  play :Fs4
+  play :B4
+  sleep 0.5
+  play :Fs4
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  sleep 1
+  sleep 0.5
+  play :Cs4
+  sleep 0.5
+  # S p a c e-2
+  play :Fs4
+  play :B4
+  sleep 1
+  sleep 0.5
+  play :Cs5
+  sleep 0.5
+  play :Cs5
+  sleep 1
+  play :A4
+  sleep 1
+  # S p a c e-3
+  play :A4
+  sleep 2
+  25.times do
+    play glissory[gliss]
+    sleep 0.08
+    gliss= gliss + 1
+  end
+  # S p a c e-4
+  play :Fs5
+  sleep 0.5
+  play :Fs5
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  stop
+end
+
+live_loop :measure1Base do
+  use_synth :piano
+  # S p a c e-1
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-2
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-3
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  # S p a c e-4
+  play :B1
+  sleep 1
+  play :B2
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2
+  sleep 1
+  stop
+end
