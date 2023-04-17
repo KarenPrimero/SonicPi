@@ -1,0 +1,604 @@
+use_bpm 169
+#Arrays:
+glissory= [:Cs8,:B7,:A7,:Gs7,:Fs7,:E7,:D7,:Cs7,:B6,:A6,:Gs6,:Fs6,:E6,:D6,:Cs6,:B5,:A5,:Gs5,:Fs5,:E5,:D5,:Cs5,:B4,:A4,:Gs4]
+gliss=0
+a=0
+#Parameterize:
+define :measureK do |one,two,three,four,five,six|
+  sleep 0.5
+  play one,amp: a
+  sleep 01
+  play two,amp: a
+  sleep 0.5
+  play three,amp: a
+  sleep 0.5
+  play four,amp: a
+  sleep 0.5
+  play five,amp: a
+  sleep 0.5
+  play six,amp: a
+  sleep 0.5
+end
+
+#Measure 1
+live_loop :measure1Trevl do
+  use_synth :piano
+  # S p a c e-1
+  play :Fs4,amp: a
+  a= a + 0.2
+  play :B4,amp: a
+  a= a + 0.2
+  sleep 0.5
+  play :Fs4,amp: a
+  a= a + 0.2
+  play :B4, amp: a
+  a= a + 0.2
+  sleep 1
+  play :Cs4,amp: a
+  a= a + 0.2
+  sleep 2
+  play :Cs4,amp: a
+  a= a + 0.3
+  sleep 0.5
+  # S p a c e-2
+  play :Fs4,amp: a
+  a= a + 0.5
+  play :B4,amp: a
+  a= a + 1
+  sleep 1.5
+  play :Cs5,amp: a
+  sleep 0.5
+  play :Cs5,amp: a
+  sleep 1
+  play :A4,amp: a
+  sleep 1
+  # S p a c e-3
+  play :A4,amp: a
+  sleep 2
+  25.times do
+    play glissory[gliss]
+    sleep 0.08
+    gliss= gliss + 1
+  end
+  # S p a c e-4 (Same as z)
+  play :Fs5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :D5,amp: a
+  sleep 0.5
+  play :B4,amp: a
+  sleep 1
+  play :B4,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-5(can be parameterized with k)(Same as S)
+  sleep 0.5
+  play :E5,amp: a
+  sleep 01
+  play :E5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :B5,amp: a
+  sleep 0.5
+  #Measure 2
+  # S p a c e-1 (Same as Q)
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 1
+  play :D5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  # S p a c e-2(can be parameterized with k) (Same as D)
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-3 (Same as z)
+  play :Fs5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :D5,amp: a
+  sleep 0.5
+  play :B4,amp: a
+  sleep 1
+  play :B4,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-4  (same as S )
+  sleep 0.5
+  play :E5,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :B5,amp: a
+  sleep 0.5
+  #Measure 3
+  # S p a c e-1  (same as Q )
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 1
+  play :D5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  # S p a c e-2  (same as D )
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-3 (Same as z)
+  play :Fs5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :D5,amp: a
+  sleep 0.5
+  play :B4,amp: a
+  sleep 1
+  play :B4,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-4  (same as S )
+  sleep 0.5
+  play :E5,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :Gs5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :B5,amp: a
+  sleep 0.5
+  #Measure 4
+  # S p a c e-1  (same as Q )
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :A5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 1
+  play :D5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  # S p a c e-2  (same as D )
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 1
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-3 (Same as E)
+  play :D4,amp: a
+  sleep 1.5
+  play :D4,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  # S p a c e-4
+  sleep 4
+  # S p a c e-5
+  play :Cs4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 1.5
+  #Measure 5
+  # S p a c e-1 (Can be parameterized with Y)
+  sleep 0.5
+  play :Fs4,amp: a
+  sleep 1
+  play :Fs4,amp: a
+  sleep 0.5
+  play :Fs4,amp: a
+  sleep 1
+  play :E4,amp: a
+  sleep 1
+  # S p a c e-2 (Same as E)
+  play :D4,amp: a
+  sleep 1.5
+  play :D4,amp: a
+  sleep 0.5
+  play :D4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :B3,amp: a
+  sleep 0.5
+  # S p a c e-3
+  sleep 3.5
+  play :B3,amp: a
+  sleep 0.5
+  # S p a c e-4
+  play :Cs4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :B3,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 0.5
+  # S p a c e-5 (Can be parameterized with Y)
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 1
+  #Measure 6
+  # S p a c e-1
+  sleep 1
+  play :D4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 0.5
+  play :D4,amp: a
+  sleep 0.5
+  # S p a c e-2
+  sleep 4
+  # S p a c e-3
+  sleep 1
+  6.times do
+    play :A3,amp: a
+    sleep 0.5
+  end
+  # S p a c e-4
+  play :A3,amp: a
+  sleep 0.5
+  play :Gs3,amp: a
+  sleep 1.5
+  play :Gs3,amp: a
+  sleep 0.5
+  play :Fs3,amp: a
+  sleep 1.5
+  stop
+end
+live_loop :measure1Base do
+  use_synth :piano
+  # S p a c e-1
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-2
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-3
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-4
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-5
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  #Measure 2
+  # S p a c e-1
+  play :A1,amp: a
+  sleep 1
+  play :A2,amp: a
+  sleep 1
+  sleep 0.5
+  play :A1,amp: a
+  sleep 0.5
+  play :A2,amp: a
+  sleep 1
+  # S p a c e-2
+  play :D2,amp: a
+  sleep 1
+  play :D3,amp: a
+  sleep 1
+  play :Cs2,amp: a
+  sleep 1
+  play :Cs3,amp: a
+  sleep 1
+  # S p a c e-3
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-4
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  #Measure 3
+  # S p a c e-1
+  play :A1,amp: a
+  sleep 1
+  play :A2,amp: a
+  sleep 1
+  sleep 0.5
+  play :A1,amp: a
+  sleep 0.5
+  play :A2,amp: a
+  sleep 1
+  # S p a c e-2
+  play :D2,amp: a
+  sleep 1
+  play :D3,amp: a
+  sleep 1
+  play :Cs2,amp: a
+  sleep 1
+  play :Cs3,amp: a
+  sleep 1
+  # S p a c e-3
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-4
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  #Measure 4
+  # S p a c e-1
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-2
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  # S p a c e-3
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-4
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  # S p a c e-5
+  play :A1,amp: a
+  sleep 1
+  play :A2,amp: a
+  sleep 1
+  sleep 0.5
+  play :A1,amp: a
+  sleep 0.5
+  play :A2,amp: a
+  sleep 1
+  #Measure 5
+  # S p a c e-1
+  play :D2,amp: a
+  sleep 1
+  play :D3,amp: a
+  sleep 1
+  play :Cs2,amp: a
+  sleep 1
+  play :Cs3,amp: a
+  sleep 1
+  # S p a c e-2
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-3
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  # S p a c e-4
+  play :A1,amp: a
+  sleep 1
+  play :A2,amp: a
+  sleep 1
+  sleep 0.5
+  play :A1,amp: a
+  sleep 0.5
+  play :A2,amp: a
+  sleep 1
+  # S p a c e-5
+  play :D2,amp: a
+  sleep 1
+  play :D3,amp: a
+  sleep 1
+  play :Cs2,amp: a
+  sleep 1
+  play :Cs3,amp: a
+  sleep 1
+  #Measure 6
+  # S p a c e-1
+  play :B1,amp: a
+  sleep 1
+  play :B2,amp: a
+  sleep 1
+  sleep 0.5
+  play :B1,amp: a
+  sleep 0.5
+  play :B2,amp: a
+  sleep 1
+  # S p a c e-2
+  play :E2,amp: a
+  sleep 1
+  play :E3,amp: a
+  sleep 1
+  sleep 0.5
+  play :E2,amp: a
+  sleep 0.5
+  play :E3,amp: a
+  sleep 1
+  # S p a c e-3
+  play :Fs2,amp: a
+  a= a - 0.2
+  sleep 1
+  play :Fs3,amp: a
+  a= a - 0.2
+  sleep 1.5
+  play :Fs2,amp: a
+  a= a - 0.3
+  sleep 0.5
+  play :Fs2,amp: a
+  a= a - 0.3
+  sleep 1
+  # S p a c e-4
+  play :D2,amp: a
+  a= a - 0.3
+  sleep 1
+  play :D3,amp: a
+  a= a - 0.3
+  sleep 1
+  play :Cs2,amp: a
+  a= a - 0.4
+  sleep 1
+  play :Cs3,amp: a
+  a= a - 0.5
+  sleep 1
+  stop
+end
