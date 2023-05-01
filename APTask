@@ -1,0 +1,314 @@
+#sample:
+tom= "/Users/karenprimero/Documents/take.wav"
+use_bpm 169
+#Arrays:
+glissory= [:Cs8,:B7,:A7,:Gs7,:Fs7,:E7,:D7,:Cs7,:B6,:A6,:Gs6,:Fs6,:E6,:D6,:Cs6,:B5,:A5,:Gs5,:Fs5,:E5,:D5,:Cs5,:B4,:A4,:Gs4]
+gliss=0
+#Variable:
+a=0
+#Parameterize:
+
+
+define :measureK do |one,two,three,four,five,six|
+  sleep 0.5
+  play one
+  sleep 1
+  play two
+  sleep 0.5
+  play three
+  sleep 0.5
+  play four
+  sleep 0.5
+  play five
+  sleep 0.5
+  play six
+  sleep 0.5
+end
+define :measureZ do |one1,two2,three3,four4,five5,six6|
+  play one1
+  sleep 0.5
+  play two2
+  sleep 0.5
+  play three3
+  sleep 0.5
+  play four4
+  sleep 1
+  play five5
+  sleep 1
+  play six6
+  sleep 0.5
+end
+
+define :measureB do|one1111,two2222,three3333,four4444,x|
+  if x==1
+    s0= 1
+    s1=1.5
+    s2=0.5
+    s3=1
+  elsif x==2
+    s0= 1
+    s1=1
+    s2=1
+    s3=1
+  end
+  play one1111,amp: a
+  sleep s0
+  play two2222,amp: a
+  sleep s1
+  play three3333,amp: a
+  sleep s2
+  play four4444,amp: a
+  sleep s3
+end
+
+#Function:
+
+define :blissing do
+  25.times do
+    play glissory[gliss]
+    sleep 0.08
+    gliss= gliss + 1
+  end
+end
+
+#Measure 1
+live_loop :measure1Trevl do
+  use_synth :piano
+  # S p a c e-1
+  play :Fs4,amp: a
+  a= a + 0.2
+  play :B4,amp: a
+  a= a + 0.2
+  sleep 0.5
+  play :Fs4,amp: a
+  a= a + 0.2
+  play :B4, amp: a
+  a= a + 0.2
+  sleep 1
+  play :Cs4,amp: a
+  a= a + 0.2
+  sleep 2
+  play :Cs4,amp: a
+  a= a + 0.3
+  sleep 0.5
+  # S p a c e-2
+  play :Fs4,amp: a
+  a= a + 0.5
+  play :B4,amp: a
+  a= a + 1
+  sleep 1.5
+  play :Cs5,amp: a
+  sleep 0.5
+  play :Cs5,amp: a
+  sleep 1
+  play :A4,amp: a
+  sleep 1
+  # S p a c e-3
+  play :A4,amp: a
+  sleep 2
+  blissing
+  gliss= 0
+  # S p a c e-4 (Same as z)
+  measureZ :Fs5,:Fs5,:D5,:B4,:B4,:E5
+  # S p a c e-5(can be parameterized with k)(Same as S)
+  measureK :E5,:E5,:Gs5,:Gs5,:A5,:B5
+  #Measure 2
+  # S p a c e-1 (Same as Q)
+  measureZ :A5,:A5,:A5,:E5,:D5,:Fs5
+  # S p a c e-2(can be parameterized with k) (Same as D)
+  measureK :Fs5,:Fs5,:E5,:E5,:Fs5,:E5
+  # S p a c e-3 (Same as z)
+  measureZ :Fs5,:Fs5,:D5,:B4,:B4,:E5
+  # S p a c e-4  (same as S )
+  measureK :E5,:E5,:Gs5,:Gs5,:A5,:B5
+  #Measure 3
+  # S p a c e-1  (same as Q )
+  measureZ :A5,:A5,:A5,:E5,:D5,:Fs5
+  # S p a c e-2  (same as D )
+  measureK :Fs5,:Fs5,:E5,:E5,:Fs5,:E5
+  # S p a c e-3 (Same as z)
+  play :Fs5,amp: a
+  sleep 0.5
+  play :Fs5,amp: a
+  sleep 0.5
+  play :D5,amp: a
+  sleep 0.5
+  play :B4,amp: a
+  sleep 1
+  play :B4,amp: a
+  sleep 1
+  play :E5,amp: a
+  sleep 0.5
+  # S p a c e-4  (same as S )
+  measureK :E5,:E5,:Gs5,:Gs5,:A5,:B5
+  #Measure 4
+  # S p a c e-1  (same as Q )
+  measureZ :A5,:A5,:A5,:E5,:D5,:Fs5
+  # S p a c e-2  (same as D )
+  measureK :Fs5,:Fs5,:E5,:E5,:Fs5,:E5
+  # S p a c e-3 (Same as E)
+  play :D4,amp: a
+  sleep 1.5
+  play :D4,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  # S p a c e-4
+  sleep 4
+  # S p a c e-5
+  play :Cs4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 1.5
+  #Measure 5
+  # S p a c e-1 (Can be parameterized with Y)
+  sleep 0.5
+  play :Fs4,amp: a
+  sleep 1
+  play :Fs4,amp: a
+  sleep 0.5
+  play :Fs4,amp: a
+  sleep 1
+  play :E4,amp: a
+  sleep 1
+  # S p a c e-2 (Same as E)
+  play :D4,amp: a
+  sleep 1.5
+  play :D4,amp: a
+  sleep 0.5
+  play :D4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :B3,amp: a
+  sleep 0.5
+  # S p a c e-3
+  sleep 3.5
+  play :B3,amp: a
+  sleep 0.5
+  # S p a c e-4
+  play :Cs4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 0.5
+  play :Cs4,amp: a
+  sleep 1
+  play :B3,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 0.5
+  # S p a c e-5 (Can be parameterized with Y)
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  play :Cs4,amp: a
+  sleep 0.5
+  play :B3,amp: a
+  sleep 1
+  play :A3,amp: a
+  sleep 1
+  #Measure 6
+  # S p a c e-1
+  sleep 1
+  play :D4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 1
+  play :D4,amp: a
+  sleep 0.5
+  play :D4,amp: a
+  sleep 0.5
+  # S p a c e-2
+  sleep 4
+  # S p a c e-3
+  sleep 1
+  6.times do
+    play :A3,amp: a
+    sleep 0.5
+  end
+  # S p a c e-4
+  play :A3,amp: a
+  sleep 0.5
+  play :Gs3,amp: a
+  sleep 1.5
+  play :Gs3,amp: a
+  sleep 0.5
+  play :Fs3,amp: a
+  sleep 1.5
+  stop
+end
+live_loop :takeon do
+  sleep 16
+  sample tom, amp: 2
+  stop
+end
+live_loop :measure1Base do
+  use_synth :piano
+  # S p a c e-1
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-2
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-3
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-4
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-5
+  measureB :E2,:E3,:E2,:E3,1
+  #Measure 2
+  # S p a c e-1
+  measureB :A1,:A2,:A1,:A2,2
+  # S p a c e-2
+  measureB :D2,:D3,:Cs2,:Cs3,2
+  # S p a c e-3
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-4
+  measureB :E2,:E3,:E2,:E3,1
+  #Measure 3
+  # S p a c e-1
+  measureB :A1,:A2,:A1,:A2,1
+  # S p a c e-2
+  measureB :D2,:D3,:Cs2,:Cs3,2
+  # S p a c e-3
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-4
+  measureB :E2,:E3,:E2,:E3,1
+  #Measure 4
+  # S p a c e-1
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-2
+  measureB :E2,:E3,:E2,:E3,1
+  # S p a c e-3
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-4
+  measureB :E2,:E3,:E2,:E3,1
+  # S p a c e-5
+  measureB :A1,:A2,:A1,:A2,1
+  #Measure 5
+  # S p a c e-1
+  measureB :D2,:D3,:Cs2,:Cs3,2
+  # S p a c e-2
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-3
+  measureB :E2,:E3,:E2,:E3,1
+  # S p a c e-4
+  measureB :A1,:A2,:A1,:A2,1
+  # S p a c e-5
+  measureB :D2,:D3,:Cs2,:Cs3,2
+  #Measure 6
+  # S p a c e-1
+  measureB :B1,:B2,:B1,:B2,1
+  # S p a c e-2
+  measureB :E2,:E3,:E2,:E3,2
+  # S p a c e-3
+  measureB :Fs2,:Fs3,:Fs2,:Fs3,1
+  # S p a c e-4
+  measureB :D2,:D3,:Cs2,:Cs3,2
+  blissing
+  stop
+end
